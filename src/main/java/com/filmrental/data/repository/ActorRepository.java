@@ -8,8 +8,9 @@ import com.filmrental.data.entity.Actor;
 
 public interface ActorRepository extends MongoRepository<Actor, String> {
 
-    public Actor findByFirstName(String firstName);
+    public List<Actor> findByFirstName(String firstName);
     public List<Actor> findByLastName(String lastName);
+    
     
 }
 

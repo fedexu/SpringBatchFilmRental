@@ -1,36 +1,47 @@
 package com.filmrental.data.entity;
 
-import java.util.Date;
-
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "actor")
 public class Actor {
 	
 	@Id
 	private String id;
-	
-	private int	actorId;
+
+	private String actorId;
 	
 	private String firstName;
 
 	private String lastName;
 
-	private Date lastUpdate;
+	private String lastUpdate;
+	
+	public Actor() {
+		
+	}
+	
+	public Actor(String actorId, String firstName, String lastName, String lastUpdate) {
+		this.actorId = actorId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.lastUpdate = lastUpdate;
+	}
 
-	public String getId() {
+	public String  getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(String  id) {
 		this.id = id;
 	}
 
-	public int getActor_id() {
-		return actorId;
+	public void setActorId(String actorId) {
+		this.actorId = actorId;
 	}
-
-	public void setActor_id(int actor_id) {
-		this.actorId = actor_id;
+	
+	public String getActorId() {
+		return actorId;
 	}
 
 	public String getFirstName() {
@@ -49,11 +60,11 @@ public class Actor {
 		this.lastName = lastName;
 	}
 
-	public Date getLastUpdate() {
+	public String getLastUpdate() {
 		return lastUpdate;
 	}
 
-	public void setLastUpdate(Date lastUpdate) {
+	public void setLastUpdate(String lastUpdate) {
 		this.lastUpdate = lastUpdate;
 	}
 
