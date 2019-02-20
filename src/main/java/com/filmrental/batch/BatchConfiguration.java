@@ -100,7 +100,7 @@ public class BatchConfiguration {
             ItemWriter<Actor> writer, ItemProcessor<Actor, Actor> processor) {
 
     	return stepBuilderFactory.get("step1")						
-            .<Actor, Actor> chunk(10)									 // data will be processed 10 chunks at a time
+            .<Actor, Actor> chunk(2)									 // data will be processed 10 chunks at a time
             .reader(reader)												 // first the reader reader() will be executed
             .processor(processor)										 // data will be processed by the processor()
             .writer(writer)											     // and written on db by our writer bean
