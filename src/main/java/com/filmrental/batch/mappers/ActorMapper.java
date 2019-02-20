@@ -14,6 +14,11 @@ public class ActorMapper implements FieldSetMapper<Actor>  {
 		actor.setFirstName(fieldSet.readString("firstName"));
 		actor.setLastName(fieldSet.readString("lastName"));
 		actor.setLastUpdate(fieldSet.readDate("lastUpdate", "dd/MM/yyyy"));
+		try {
+			actor.setId(fieldSet.readLong("id"));
+		} catch (NumberFormatException nfe) {
+			actor.setId(null);
+		}
 		return actor;
 	}
 

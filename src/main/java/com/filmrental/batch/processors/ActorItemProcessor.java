@@ -13,7 +13,7 @@ public class ActorItemProcessor implements ItemProcessor<Actor, Actor> {
     @Override
     public Actor process(final Actor actor) throws Exception {
        
-        Actor transformedActor = new Actor(actor.getFirstName().toUpperCase(), actor.getLastName().toUpperCase(), actor.getLastUpdate());
+        Actor transformedActor = new Actor(actor.getId(), actor.getFirstName().toUpperCase(), actor.getLastName().toUpperCase(), actor.getLastUpdate());
 
         log.info("Converting {} into {}" , actor.getFirstName(), transformedActor.getFirstName());
 
