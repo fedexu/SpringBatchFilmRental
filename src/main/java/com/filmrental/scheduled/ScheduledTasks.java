@@ -22,7 +22,7 @@ public class ScheduledTasks {
 	 @Autowired
 		Job importActorJob;
 	 	
-	 @Scheduled(fixedDelay = 2000) 
+	 @Scheduled(fixedDelay = 10000) 
 	 public String executeJob() throws Exception {
 
 			jobLauncher.run(importActorJob,
